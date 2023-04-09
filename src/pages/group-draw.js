@@ -3,24 +3,24 @@ import { useRouter } from 'next/router';
 import Lottery from '../components/Lottery';
 import styles from '../components/Lottery.module.css';
 
-function Home() {
+function GroupDraw() {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push('/group-draw');
+    router.push('/');
   };
 
   return (
-    <div>
-      <h1 className={styles.title}>学    号</h1>
-      <Lottery maxNumber={38} digits={2} />
+    <div className={styles.groupDraw}>
+      <h1 className={styles.title}>组    号</h1>
+      <Lottery maxNumber={8} digits={1} />
       <div>
         <span className={styles.navLink} onClick={handleClick}>
-          去抽一个小组
+          去抽选一位同学
         </span>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default GroupDraw;
