@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Lottery from '../components/Lottery';
 import styles from '../components/Lottery.module.css';
 
 function Home() {
-  const router = useRouter();
+    // ... other code ...
 
-  const handleClick = () => {
-    router.push('/group-draw');
-  };
-
-  return (
-    <div>
-      <h1 className={styles.title}>学    号</h1>
-      <Lottery maxNumber={38} digits={2} />
-      <div>
+    return (
+        <div className={styles.pageContainer}>
+            <h1 className={styles.title}>学号</h1>
+            <Lottery maxNumber={38} digits={2} />
+            <div>
         <span className={styles.navLink} onClick={handleClick}>
-          去抽一个小组
+          Go to Group Draw
         </span>
-      </div>
-    </div>
-  );
+            </div>
+            <div className={styles.floatingText}>离中考还有 {daysUntilExam} 天</div>
+        </div>
+    );
 }
 
 export default Home;
