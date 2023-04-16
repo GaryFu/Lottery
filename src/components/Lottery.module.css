@@ -1,7 +1,7 @@
 /* src/components/Lottery.module.css */
 .pageContainer {
-  padding-left: 100vw;
-  padding-right: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*.title {*/
