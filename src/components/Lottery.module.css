@@ -95,9 +95,9 @@
 .floatingText {
   position: fixed;
   left: 20px;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
-  color: white;
+  color: orange;
   font-size: 1.5rem;
   font-weight: bold;
   writing-mode: vertical-rl;
