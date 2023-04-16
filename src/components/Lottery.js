@@ -85,7 +85,7 @@ function Lottery({ maxNumber, digits }) {
   const spheres = isRolling ? randomDigits : fixedDigits;
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.lottery}>
       <div className={styles.sphereContainer}>
         {spheres.map((digit, index) => (
           <div key={index} className={styles.ball}>
