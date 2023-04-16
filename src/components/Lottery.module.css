@@ -1,7 +1,7 @@
 /* src/components/Lottery.module.css */
 .pageContainer {
-  padding-left: 10vw;
-  padding-right: 10vw;
+  /*padding-left: 10vw;*/
+  /*padding-right: 10vw;*/
 }
 
 /*.title {*/
@@ -105,7 +105,7 @@
 
 .title {
   font-size: 3rem;
-  color: white;
+  color: darkblue;
   text-align: center;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
