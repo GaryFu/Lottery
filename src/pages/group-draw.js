@@ -11,15 +11,15 @@ function GroupDraw() {
     };
 
     return (
-        <div className={styles.pageContainer}>
+        <div>
             <h1 className={styles.title}>小组抽签</h1>
             <div className={styles.groupDraw}>
                 <Lottery maxNumber={8} digits={1} />
             </div>
             <div>
-        <span className={styles.navLink} onClick={handleClick}>
-          Go to Individual Draw
-        </span>
+            <span className={styles.navLink} onClick={handleClick}>
+              Go to Individual Draw
+            </span>
             </div>
         </div>
     );
