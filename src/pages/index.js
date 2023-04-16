@@ -25,7 +25,7 @@ function Home() {
     };
 
   return (
-    <div className={styles.pageContainer}>
+    <div>
       <Lottery maxNumber={38} digits={2} title={"学    号"}/>
       <div>
         <span className={styles.navLink} onClick={handleClick}>
