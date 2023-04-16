@@ -1,66 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Lottery from '../components/Lottery';
-import styles from '../styles/Index.module.css';
+import styles from '../components/Lottery.module.css';
 
 function Home() {
-    const [drawCounts, setDrawCounts] = useState(new Array(38).fill(0));
     const router = useRouter();
-
-    const handleDraw = (number) => {
-        setDrawCounts((prevCounts) => {
-            const newCounts = [...prevCounts];
-            newCounts[number - 1]++;
-            return newCounts;
-        });
-    };
+    const [daysUntilExam, setDaysUntilExam] = useState(0);
 
     useEffect(() => {
-        const countdown = document.getElementById('countdown');
-        const targetDate = new Date('2023-06-17');
-        const updateCountdown = () => {
-            const now = new Date();
-            const diff = Math.ceil((targetDate - now) / (1000 * 60 * 60 * 24));
-            countdown.textContent = `离中考还有${diff}天`;
-        };
-
-        updateCountdown();
-        const timer = setInterval(updateCountdown, 1000 * 60 * 60);
-
-        return () => {
-            clearInterval(timer);
-        };
+        const days = getDaysUntilExam();
+        setDaysUntilExam(days);
     }, []);
 
-    return (
-        <div className={styles.pageContainer}>
-            <h1 className={styles.title}>学号</h1>
-            <div className={styles.lotteryContainer}>
-                <Lottery maxNumber={38} digits={2} onDraw={handleDraw} />
-            </div>
-            <div className={styles.footer}>
-                <Link href="/group-draw">
-                    <button className={styles.navButton}>抽取小组</button>
-                </Link>
-            </div>
-            <div id="countdown" className={styles.countdown}></div>
-            <div className={styles.floatingTable}>
-                <table>
-                    <tbody>
-                    {drawCounts.map((count, index) =>
-                        count > 0 ? (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>{count}</td>
-                            </tr>
-                        ) : null
-                    )}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    );
+    const handleClick = () => {
+        router.push('/group-draw');
+    };
+
+    const getDaysUntilExam = () => {
+        const currentDate = new Date();
+        const examDate = new Date(2023, 5, 17); // June 17, 2023
+        const timeDifference = examDate - currentDate;
+        const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+        return daysDifference;
+    };
+
+  return (
+    <div>
+      <h1 className={styles.title}>学    号</h1>
+      <Lottery maxNumber={38} digits={2} />
+      <div>
+        <span className={styles.navLink} onClick={handleClick}>
+          去抽一个小组
+        </span>
+      </div>
+      <div className={styles.floatingText}>离中考还有 {daysUntilExam} 天</div>
+    </div>
+  );
 }
 
 export default Home;
