@@ -17,8 +17,9 @@ function GroupDraw() {
             </div>
             <div>
             <span className={styles.navLink} onClick={handleClick}>
-              Go to Individual Draw
+              去抽学号
             </span>
+            <span className={styles.floatingText}>离中考还有 {daysUntilExam} 天</span>
             </div>
         </div>
     );
