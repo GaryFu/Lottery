@@ -24,15 +24,43 @@ function Home() {
         return daysDifference;
     };
 
+    const [drawnNumbers, setDrawnNumbers] = useState(Array(38).fill(0));
+
+    const handleNumberDrawn = (number) => {
+        const newDrawnNumbers = [...drawnNumbers];
+        newDrawnNumbers[number - 1]++;
+        setDrawnNumbers(newDrawnNumbers);
+    };
   return (
     <div className={styles.pageContainer}>
-      <Lottery maxNumber={38} digits={2} title={"学    号"}/>
-      <div>
+       <Lottery maxNumber={38} digits={2} onNumberDrawn={handleNumberDrawn}  title={"学    号"} />
+
+        <div>
         <span className={styles.navLink} onClick={handleClick}>
           去抽一个小组
         </span>
       </div>
       <div className={styles.floatingText}>离中考还有 {daysUntilExam} 天</div>
+        <table className={styles.resultsTable}>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>次数</th>
+            </tr>
+            </thead>
+            <tbody>
+            {drawnNumbers.map((count, index) => {
+                if (count > 0) {
+                    return (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{count}</td>
+                        </tr>
+                    );
+                }
+            })}
+            </tbody>
+        </table>
     </div>
   );
 }

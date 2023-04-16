@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Lottery.module.css';
 
-function Lottery({ maxNumber, digits, title }) {
+function Lottery({ maxNumber, digits, title, onNumberDrawn }) {
   const [fixedDigits, setFixedDigits] = useState(Array(digits).fill('0'));
   const [randomDigits, setRandomDigits] = useState(Array(digits).fill('0'));
   const [isRolling, setIsRolling] = useState(false);
@@ -35,6 +35,7 @@ function Lottery({ maxNumber, digits, title }) {
           const drawnNumber = Math.floor(Math.random() * maxNumber) + 1;
           const numberString = drawnNumber.toString().padStart(digits, '0');
           setFixedDigits(numberString.split(''));
+          onNumberDrawn && onNumberDrawn(drawnNumber); // Call the callback function
         }
       }
     };
