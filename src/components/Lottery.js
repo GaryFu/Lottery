@@ -26,8 +26,8 @@ function Lottery(props) {
         e.preventDefault();
         setIsRolling(!isRolling);
         if (!isRolling) {
-          const drawnNumber = Math.floor(Math.random() * maxNumber) + 1;
-          const numberString = drawnNumber.toString().padStart(digits, '0');
+          const drawnNumber = Math.floor(Math.random() * props.maxNumber) + 1;
+          const numberString = drawnNumber.toString().padStart(props.digits, '0');
           setFixedDigits(numberString.split(''));
         }
       }
