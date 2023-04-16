@@ -115,20 +115,17 @@
 .resultsTable {
   position: fixed;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: darkgreen;
-  font-size: 1.2rem;
+  top: 5%; /* 设置表格距离屏幕顶部的距离为5% */
+  transform: translateY(0%);
+  color: orangered;
+  font-size: calc(1vh * 1.8); /* 设置字体高度为屏幕高度的1/55 */
   border-collapse: collapse;
-  border: 1px solid white;
+  border: 1px solid darkgreen;
   max-height: 80vh; /* 设置最大高度为屏幕高度的80% */
   overflow-y: auto; /* 当内容超出最大高度时，显示滚动条 */
-  height: 100%; /* 设置表格的高度为100% */
 }
-
-
-.resultsTable th,
-.resultsTable td {
-  padding: 4px 8px;
-  border: 1px solid blue;
+.resultsTable td,
+.resultsTable th {
+  padding: calc(1vh * 0.5) calc(1vh * 1); /* 设置单元格内边距 */
+  line-height: calc(1vh * 2); /* 设置行高为屏幕高度的1/50 */
 }
