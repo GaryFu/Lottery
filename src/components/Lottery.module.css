@@ -117,17 +117,18 @@
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
+  color: darkgreen;
   font-size: 1.2rem;
   border-collapse: collapse;
   border: 1px solid white;
   max-height: 80vh; /* 设置最大高度为屏幕高度的80% */
   overflow-y: auto; /* 当内容超出最大高度时，显示滚动条 */
+  height: 100%; /* 设置表格的高度为100% */
 }
 
 
 .resultsTable th,
 .resultsTable td {
   padding: 4px 8px;
-  border: 1px solid black;
+  border: 1px solid blue;
 }
