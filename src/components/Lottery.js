@@ -86,6 +86,7 @@ function Lottery({ maxNumber, digits }) {
 
   return (
       <div className={styles.lottery}>
+          <h1 className={styles.title}>学    号</h1>
           <div className={styles.sphereContainer}>
               {spheres.map((digit, index) => (
                   <div key={index} className={styles.ball}>
