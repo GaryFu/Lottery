@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Lottery from '../components/Lottery';
-import styles from '../components/Lottery.module.css';
+import styles from '../components/Index.module.css';
 
 function GroupDraw() {
     const router = useRouter();

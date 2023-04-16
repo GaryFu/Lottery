@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Lottery from '../components/Lottery';
-import styles from '../components/Lottery.module.css';
+import styles from '../styles/Index.module.css';
 
 function Home() {
     const [drawCounts, setDrawCounts] = useState(new Array(38).fill(0));
@@ -36,7 +36,9 @@ function Home() {
     return (
         <div className={styles.pageContainer}>
             <h1 className={styles.title}>学号</h1>
-            <Lottery maxNumber={38} digits={2} onDraw={handleDraw} />
+            <div className={styles.lotteryContainer}>
+                <Lottery maxNumber={38} digits={2} onDraw={handleDraw} />
+            </div>
             <div className={styles.footer}>
                 <Link href="/group-draw">
                     <button className={styles.navButton}>抽取小组</button>

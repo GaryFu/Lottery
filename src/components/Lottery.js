@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Lottery.module.css';
+import styles from './Index.module.css';
 
 function Lottery(props) {
     const [number, setNumber] = useState(props.initialNumber || 1);
