@@ -24,7 +24,7 @@ function Home() {
         return daysDifference;
     };
 
-    const [drawnNumbers, setDrawnNumbers] = useState(Array(38).fill(0));
+    const [drawnNumbers, setDrawnNumbers] = useState(Array(43).fill(0));
 
     const handleNumberDrawn = (number) => {
         const newDrawnNumbers = [...drawnNumbers];
@@ -33,7 +33,7 @@ function Home() {
     };
   return (
     <div className={styles.pageContainer}>
-       <Lottery maxNumber={38} digits={2} onNumberDrawn={handleNumberDrawn}  title={"学    号"} />
+       <Lottery maxNumber={43} digits={2} onNumberDrawn={handleNumberDrawn}  title={"学    号"} />
 
         <div>
         <span className={styles.navLink} onClick={handleClick}>
