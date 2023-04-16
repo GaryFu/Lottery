@@ -93,10 +93,9 @@
 }
 
 .floatingText {
-  position: fixed;
-  z-index: 9999;
-  margin-left: 20px;
-  margin-top: 30%;
+  position: absolute;
+  top: 100px;
+  left: 20px;
   transform: translateY(-50%);
   color: orange;
   font-size: 1.5rem;
