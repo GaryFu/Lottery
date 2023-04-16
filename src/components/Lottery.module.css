@@ -1,7 +1,7 @@
 /* src/components/Lottery.module.css */
 .pageContainer {
-  /*padding-left: 10vw;*/
-  /*padding-right: 10vw;*/
+  padding-left: 100vw;
+  padding-right: 100vh;
 }
 
 /*.title {*/
@@ -93,8 +93,7 @@
 }
 
 .floatingText {
-  position: absolute;
-  left: 20px;
+  margin-left: 20px;
   margin-top: 30%;
   transform: translateY(-50%);
   color: orange;
