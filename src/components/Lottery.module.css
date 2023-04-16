@@ -117,7 +117,7 @@
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
+  color: darkgreen;
   font-size: 1rem;
   font-weight: bold;
   border-collapse: collapse;
@@ -125,5 +125,5 @@
 
 .floatingTable td {
   padding: 5px;
-  border: 1px solid white;
+  border: 1px solid blue;
 }

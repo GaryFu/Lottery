@@ -43,12 +43,14 @@ function Home() {
         <div className={styles.floatingTable}>
             <table>
                 <tbody>
-                {drawCounts.map((count, index) => (
-                    <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{count}</td>
-                    </tr>
-                ))}
+                {drawCounts.map((count, index) =>
+                    count > 0 ? (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{count}</td>
+                        </tr>
+                    ) : null
+                )}
                 </tbody>
             </table>
         </div>
