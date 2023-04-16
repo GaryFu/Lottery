@@ -3,28 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Lottery.module.css';
 
-function Lottery({ maxNumber, digits }) {
-  const [fixedDigits, setFixedDigits] = useState(Array(digits).fill('0'));
-  const [randomDigits, setRandomDigits] = useState(Array(digits).fill('0'));
-  const [isRolling, setIsRolling] = useState(false);
+function Lottery(props) {
+    const [number, setNumber] = useState(props.initialNumber || 1);
+    const [isRolling, setIsRolling] = useState(false);
 
-  useEffect(() => {
-    let timer;
-
-    if (isRolling) {
-      timer = setInterval(() => {
-        setRandomDigits(
-          Array(digits)
-            .fill(0)
-            .map(() => Math.floor(Math.random() * 10).toString())
-        );
-      }, 100);
-    }
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [isRolling, digits]);
+    useEffect(() => {
+        if (rolling) {
+            const timer = setInterval(() => {
+                setNumber((prevNumber) => Math.floor(Math.random() * props.maxNumber) + 1);
+            }, 100);
+            return () => clearInterval(timer);
+        } else {
+            if (props.onDraw) {
+                props.onDraw(number);
+            }
+        }
+    }, [isRolling]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -43,7 +37,7 @@ function Lottery({ maxNumber, digits }) {
     return () => {
       window.removeEventListener('keypress', handleKeyPress);
     };
-  }, [isRolling, maxNumber, digits]);
+  }, [isRolling, props.maxNumber, props.digits]);
 
  useEffect(() => {
     const handleDoubleClick = (e) => {
