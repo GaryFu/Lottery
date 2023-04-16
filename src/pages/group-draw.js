@@ -14,7 +14,7 @@ function GroupDraw() {
         <div className={styles.pageContainer}>
             <h1 className={styles.title}>小组抽签</h1>
             <div className={styles.groupDraw}>
-                <Lottery maxNumber={8} digits={1} />
+                <Lottery maxNumber={8} digits={1} title={"小组抽签"}/>
             </div>
             <div>
             <span className={styles.navLink} onClick={handleClick}>

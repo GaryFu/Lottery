@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Lottery.module.css';
 
-function Lottery({ maxNumber, digits }) {
+function Lottery({ maxNumber, digits, title }) {
   const [fixedDigits, setFixedDigits] = useState(Array(digits).fill('0'));
   const [randomDigits, setRandomDigits] = useState(Array(digits).fill('0'));
   const [isRolling, setIsRolling] = useState(false);
@@ -86,6 +86,7 @@ function Lottery({ maxNumber, digits }) {
 
   return (
       <div className={styles.lottery}>
+          <h1 className={styles.title}>{title}</h1>
           <div className={styles.sphereContainer}>
               {spheres.map((digit, index) => (
                   <div key={index} className={styles.ball}>
