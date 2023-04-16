@@ -8,25 +8,24 @@ function Lottery({ maxNumber, digits, title, onNumberDrawn }) {
   const [randomDigits, setRandomDigits] = useState(Array(digits).fill('0'));
   const [isRolling, setIsRolling] = useState(false);
 
-  useEffect(() => {
-    let timer;
+    useEffect(() => {
+        let timer;
+        const maxNumberPerBall = Math.ceil(maxNumber / 10);
 
-    if (isRolling) {
-      timer = setInterval(() => {
-          timer = setInterval(() => {
-              setRandomDigits(
-                  Array(digits)
-                      .fill(0)
-                      .map(() => Math.floor(Math.random() * (maxNumber + 1)).toString().padStart(digits, '0'))
-              );
-          }, 100);
-      }, 100);
-    }
+        if (isRolling) {
+            timer = setInterval(() => {
+                setRandomDigits(
+                    Array(digits)
+                        .fill(0)
+                        .map(() => Math.floor(Math.random() * maxNumberPerBall).toString())
+                );
+            }, 100);
+        }
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [isRolling, digits]);
+        return () => {
+            clearInterval(timer);
+        };
+    }, [isRolling, digits, maxNumber]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
