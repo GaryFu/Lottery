@@ -32,7 +32,7 @@ function Home() {
           去抽一个小组
         </span>
       </div>
-      <span className={styles.floatingText}>离中考还有 {daysUntilExam} 天</span>
+      <div className={styles.floatingText}>离中考还有 {daysUntilExam} 天</div>
     </div>
   );
 }
