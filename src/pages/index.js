@@ -33,14 +33,14 @@ function Home() {
     };
   return (
     <div className={styles.pageContainer}>
-       <Lottery maxNumber={43} digits={2} onNumberDrawn={handleNumberDrawn}  title={"学    号"} />
+       <Lottery maxNumber={48} digits={2} onNumberDrawn={handleNumberDrawn}  title={"学    号"} />
 
         <div>
         <span className={styles.navLink} onClick={handleClick}>
           去抽一个小组
         </span>
       </div>
-    <div className={styles.floatingText}>祝亲爱的老师们节日快乐！</div>
+    <div className={styles.floatingText}>祝 亲 爱 的 老 师 们 节 日 快 乐！</div>
         <table className={styles.resultsTable}>
             <thead>
             <tr>
