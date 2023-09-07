@@ -94,11 +94,11 @@
 
 .floatingText {
   position: absolute;
-  top: 250px;
+  top: 150px;
   left: 20px;
   transform: translateY(-50%);
   color: orange;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   writing-mode: vertical-rl;
   text-orientation: upright;
