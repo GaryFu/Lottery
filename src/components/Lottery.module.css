@@ -94,7 +94,7 @@
 
 .floatingText {
   position: absolute;
-  top: 150px;
+  top: 200px;
   left: 20px;
   transform: translateY(-50%);
   color: orange;
