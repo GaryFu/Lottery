@@ -41,6 +41,7 @@ function Home() {
         </span>
       </div>
       //<div className={styles.floatingText}>离中考还有 {daysUntilExam} 天</div>
+      
       <div className={styles.floatingText}>祝亲爱的老师们节日快乐！</div>
         <table className={styles.resultsTable}>
             <thead>
