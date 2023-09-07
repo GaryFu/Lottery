@@ -24,7 +24,7 @@ function Home() {
         return daysDifference;
     };
 
-    const [drawnNumbers, setDrawnNumbers] = useState(Array(43).fill(0));
+    const [drawnNumbers, setDrawnNumbers] = useState(Array(48).fill(0));
 
     const handleNumberDrawn = (number) => {
         const newDrawnNumbers = [...drawnNumbers];
